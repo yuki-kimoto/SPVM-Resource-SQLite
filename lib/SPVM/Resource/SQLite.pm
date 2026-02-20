@@ -4,106 +4,96 @@ our $VERSION = "0.001";
 
 1;
 
-=encoding utf8
-
 =head1 Name
 
-SPVM::Resource::SQLite - Short Description
+SPVM::Resource::SQLite - A resource that provides the SQLite header and source code.
 
 =head1 Description
 
-Resource::SQLite class in L<SPVM> is a L<resource|SPVM::Document::Resource> class for something.
+SPVM::Resource::SQLite in L<SPVM> is a L<resource|SPVM::Document::Resource> class for L<SQLite|https://www.sqlite.org/>.
 
 =head1 Usage
 
 MyClass.config:
   
-  my $config = SPVM::Builder::Config->new_gnu99;
-  
+  my $config = SPVM::Builder::Config->new;
   $config->use_resource('Resource::SQLite');
-  
   $config;
 
 MyClass.c:
 
-  #include "spvm_native.h"
-  #include "foo.h"
-  
-  
+  #include "sqlite3.h"
   
   int32_t SPVM__MyClass__test(SPVM_ENV* env, SPVM_VALUE* stack) {
     
-    // Use functions in foo.h
+    const char* version = sqlite3_libversion();
     
     return 0;
   }
-  
-  
-  
-=head1 Details
-
-
 
 =head1 Original Product
 
-
+L<SQLite|https://www.sqlite.org/>
 
 =head1 Original Product Version
 
-
+L<SQLite 3.45.1 (Amalgamation)|https://www.sqlite.org/download.html>
 
 =head1 Language
 
-
-
-=head1 Language Specification
-
-
-
-=head1 Required Libraries
-
-
-
-=head1 Required Linker Flags
-
-
-
-=head1 Required Resources
-
-
+C
 
 =head1 Header Files
 
+=over 2
 
+=item * sqlite3.h
+
+=item * sqlite3ext.h
+
+=back
 
 =head1 Source Files
 
+=over 2
 
+=item * sqlite3.c
+
+=back
 
 =head1 Compiler Flags
 
+=over 2
 
+=item * -DSQLITE_THREADSAFE=1
+
+=item * -DSQLITE_ENABLE_COLUMN_METADATA
+
+=back
 
 =head1 How to Create Resource
 
+=head2 Download
 
-
-=head2 Donwload
-
-
+  mkdir -p .tmp
+  # Download SQLite 3.49.1 Amalgamation (Released in early 2025)
+  curl -L https://www.sqlite.org/2025/sqlite-amalgamation-3490100.zip -o .tmp/sqlite-amalgamation-3490100.zip
+  unzip .tmp/sqlite-amalgamation-3490100.zip -d .tmp/
 
 =head2 Extracting Source Files
 
-
+  # Copy the amalgamation source file
+  cp .tmp/sqlite-amalgamation-3490100/sqlite3.c lib/SPVM/Resource/SQLite.native/src/
 
 =head2 Extracting Header Files
 
-
-
+  # Copy the header files
+  cp .tmp/sqlite-amalgamation-3490100/sqlite3.h lib/SPVM/Resource/SQLite.native/include/
+  cp .tmp/sqlite-amalgamation-3490100/sqlite3ext.h lib/SPVM/Resource/SQLite.native/include/
 
 =head1 Repository
 
-
+L<SPVM::Resource::SQLite - Github|https://github.com/yuki-kimoto/SPVM-Resource-SQLite>
 
 =head1 Author
 
@@ -114,4 +104,3 @@ Yuki Kimoto C<kimoto.yuki@gmail.com>
 Copyright (c) 2026 Yuki Kimoto
 
 MIT License
-
