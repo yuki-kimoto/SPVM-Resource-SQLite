@@ -16,7 +16,7 @@ SPVM::Resource::SQLite in L<SPVM> is a L<resource|SPVM::Document::Resource> clas
 
 MyClass.config:
   
-  my $config = SPVM::Builder::Config->new_gnu99;
+  my $config = SPVM::Builder::Config->new_c99;
   $config->use_resource('Resource::SQLite');
   $config;
 
