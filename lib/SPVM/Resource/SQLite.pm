@@ -16,7 +16,7 @@ SPVM::Resource::SQLite in L<SPVM> is a L<resource|SPVM::Document::Resource> clas
 
 MyClass.config:
   
-  my $config = SPVM::Builder::Config->new;
+  my $config = SPVM::Builder::Config->new_gnu99;
   $config->use_resource('Resource::SQLite');
   $config;
 
@@ -67,7 +67,31 @@ C
 
 =item * -DSQLITE_THREADSAFE=1
 
+Enables multi-thread support.
+
 =item * -DSQLITE_ENABLE_COLUMN_METADATA
+
+Enables APIs that provide column metadata, required by many database drivers.
+
+=item * -DSQLITE_ENABLE_FTS5
+
+Enables the Full-Text Search engine version 5.
+
+=item * -DSQLITE_ENABLE_RTREE
+
+Enables the R*Tree index extension for spatial queries.
+
+=item * -DSQLITE_ENABLE_MATH_FUNCTIONS
+
+Enables built-in SQL math functions (sin, cos, log, sqrt, etc.).
+
+=item * -DSQLITE_ENABLE_JSON1
+
+Enables JSON functions for managing JSON data in SQL.
+
+=item * -DSQLITE_ENABLE_DBSTAT_VTAB
+
+Enables the dbstat virtual table to query database space usage.
 
 =back
 
