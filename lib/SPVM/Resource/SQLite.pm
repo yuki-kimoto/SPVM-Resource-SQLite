@@ -93,6 +93,10 @@ Enables JSON functions for managing JSON data in SQL.
 
 Enables the dbstat virtual table to query database space usage.
 
+=item * -pthread
+
+Adds support for multithreading with the pthreads library.
+
 =back
 
 =head1 How to Create Resource
