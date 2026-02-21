@@ -37,8 +37,8 @@ WriteMakefile(
     resources => {
       repository => {
         type => 'git',
-        url  => '',
-        web  => '',
+        url  => 'https://github.com/yuki-kimoto/SPVM-Resource-SQLite.git',
+        web  => 'https://github.com/yuki-kimoto/SPVM-Resource-SQLite',
       },
     },
     no_index => {
