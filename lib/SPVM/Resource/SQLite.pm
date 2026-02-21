@@ -43,6 +43,10 @@ L<SQLite 3.45.1 (Amalgamation)|https://www.sqlite.org/download.html>
 
 C
 
+=head1 Language Standard
+
+C99
+
 =head1 Header Files
 
 =over 2
